@@ -1,0 +1,58 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
+
+.custom-navbar {
+    background-color: transparent; 
+    color: #fefffa; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
+.navbar-brand {
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #f8c1bf;
+    text-shadow: 
+    1px 1px 0 #000000, /* Borde izquierdo */
+    -1px -1px 0 #000000, /* Borde superior */
+    1px -1px 0 #000000, /* Borde derecho */
+    -1px 1px 0 #000000; /* Borde inferior */
+    transition: color 0.5s ease;
+}
+
+.navbar-brand:hover {
+    color: #df8986;
+}
+
+.nav-links {
+    background-color: #212321; 
+    padding: 5px; 
+    font-weight: 500;
+}
+
+.nav-link {
+    color: #fefffa; 
+    margin-left: 1rem; 
+}
+
+.nav-link:hover {
+    color: #FEDCDB; 
+}
+
+@media screen and (min-width: 991px){
+    .nav-link:last-child {
+        color: #212321;
+        background-color: #df8986;
+        border-radius: 50px;
+        padding: 7px 15px !important; /* Padding para el botón de contacto */
+    }
+    .nav-links {
+        background-color: #212321; 
+        border-radius: 50px; 
+        padding: 5px; 
+        margin-left: auto; 
+    }
+}
