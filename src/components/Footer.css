@@ -1,0 +1,33 @@
+.footer {
+  background-color: #212321;
+  color: #fefffa;
+}
+
+.footer-title {
+  font-family: 'Modak', sans-serif;
+  color: #f8c1bf;
+  text-shadow: 1px 1px 0 #000000;
+}
+
+.footer-link {
+  color: #fefffa;
+  margin: 0 10px;
+}
+
+.footer-link:hover {
+  color: #df8986;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: #fefffa;
+}
+
+.social-icon:hover {
+  color: #df8986;
+}
+
+.copyright {
+  margin-top: 20px;
+  color: #fefffa;
+}

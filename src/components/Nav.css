@@ -10,6 +10,19 @@
     width: 100%; 
     z-index: 1000; 
 }
+
+.fixed-top {
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    background-color: transparent; /* Nav es transparente mientras está fixed */
+}
+
+.custom-navbar:not(.fixed-top) {
+    position: relative;
+    background-color: #212321; /* Nav se vuelve de color cuando ya no está fixed */
+}
+
 .navbar-brand {
     font-family: "Modak", system-ui;
     font-weight: 400;
@@ -33,6 +46,25 @@
     font-weight: 500;
 }
 
+.color-black {
+    color: black;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    
+}
+
+.color-black .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='black' stroke-width='1.5' d='M1 2.75h14M1 8h14M1 13.25h14'/%3E%3C/svg%3E");
+}
+
+.color-black:focus,
+.color-black:active {
+    outline:none;
+    box-shadow: none; /* Asegura que no se muestre el borde al hacer focus */
+}
+
+
 .nav-link {
     color: #fefffa; 
     margin-left: 1rem; 
@@ -42,8 +74,10 @@
     color: #FEDCDB; 
 }
 
+
+
 @media screen and (min-width: 991px){
-    .nav-link:last-child {
+    .custom-navbar .nav-link:last-child {
         color: #212321;
         background-color: #df8986;
         border-radius: 50px;

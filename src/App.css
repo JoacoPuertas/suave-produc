@@ -1,15 +1,96 @@
-/* CSS para la sección main con imagen de fondo */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Fonts and General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap');
 
 * {
-  font-family: 'poppins';
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Main Section Styles */
+.main-section {
+  position: relative;
+  height: 100vh;
+  background-image: url('./assets/julis.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Session Section */
+.session {
+  background-color: #212321;
+  color: #fefffa;
+  padding: 3rem;
 }
 
-.main-section {
-  position: relative; /* Permite la superposición de otros elementos */
-  height: 100vh; /* Ajusta la altura de la sección main */
-  background-image: url('./assets/julis.jpg'); /* Ajusta la ruta según donde se encuentre la imagen */
-  background-size: cover; /* Ajusta la imagen para que cubra toda el área */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
+.session h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Backstage Section */
+.backstage {
+  background-color: #212321;
+  padding: 3rem 0;
+}
+
+/* Estilos generales para la galería */
+.gallery-grid {
+  display: grid;
+  gap: 10px;
+}
+
+/* Versiones Mobile y Tablet */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr; /* Una columna para imagenes de ancho completo */
+  }
+
+  .img1, .img4{
+    grid-column: span 1; /* Estas imágenes ocupan todo el ancho */
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .img2, .img3 {
+    
+    height: 200px;
+    display: inline-block;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* Asegura que las imágenes 2 y 3 compartan la misma fila */
+  .gallery-grid .img2, .gallery-grid .img3 {
+    grid-template-columns: repeat(2, 1fr); /* Dividir el espacio en dos */
+  }
+}
+
+/* Version Desktop */
+@media (min-width: 769px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
+  }
+
+  .img1, .img2, .img3, .img4{
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+/* Estilos específicos para las imágenes */
+.img1 {
+  background-image: url('./assets/Fotos/Suave0.jpg');
+}
+.img2 {
+  background-image: url('./assets/Fotos/Suave1.jpg');
+}
+.img3 {
+  background-image: url('./assets/Fotos/Suave2.jpg');
+}
+.img4 {
+  background-image: url('./assets/Fotos/Suave3.jpg');
 }
