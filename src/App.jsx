@@ -1,8 +1,20 @@
 import React from 'react';
 import Navegator from './components/Nav';
 import Footer from './components/Footer';
+import Backstage from './components/Backstage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+// Imágenes importadas
+import Suave0 from './assets/Fotos/Suave0.jpg';
+import Suave1 from './assets/Fotos/Suave1.jpg';
+import Suave2 from './assets/Fotos/Suave2.jpg';
+import Suave3 from './assets/Fotos/Suave3.jpg';
+import Suave4 from './assets/Fotos/Suave4.jpg';
+import Suave5 from './assets/Fotos/Suave5.jpg';
+import Suave6 from './assets/Fotos/Suave6.jpg';
+import Suave7 from './assets/Fotos/Suave7.jpg';
+import Suave8 from './assets/Fotos/Suave8.jpg';
 
 function App() {
   const sections = [
@@ -11,26 +23,35 @@ function App() {
     { name: 'About Us', link: '#About Us' },
     { name: 'Contact', link: '#Contact' },
   ];
+
+  // Pasamos las imágenes importadas
+  const photos = [
+    Suave0,
+    Suave1,
+    Suave2,
+    Suave3,
+    Suave4,
+    Suave5,
+    Suave6,
+    Suave7,
+    Suave8
+  ];
+
   return (
     <div className="App">
       <main className="main-section">
         <Navegator />
       </main>
       <section className='session p-3 '>
-        <h2 className='text-center'>Sesions</h2>
+        <h2 className='text-center mb-3 mb-lg-4'>Sessions</h2>
         <div className="container">
           <lite-youtube videoid="710bxzd_wY"></lite-youtube>
-          <p className='fs-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ea qui vel, repudiandae mollitia in unde officiis ex. Rerum blanditiis nisi impedit doloribus quis at reiciendis cupiditate nemo soluta eum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora est ullam officia beatae, adipisci consectetur corporis impedit vero commodi, non aliquam. Aliquam repellat, quaerat consectetur odio eius quis eos amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque libero cupiditate vel ducimus facere repellendus at deserunt deleniti hic fugiat aliquam alias corporis fugit, odit aut atque quo doloribus. Minus!</p>
+          <p className='fs-6 fs-lg-6'>Lorem ipsum dolor sit amet... Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci corporis, aperiam perspiciatis a consequatur porro aut mollitia odio quas, dolor eligendi repellat illo optio quod illum distinctio. Excepturi, pariatur rem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci nihil nostrum ipsum commodi dignissimos quisquam nulla deserunt repellat fuga consequatur vel rem, possimus consectetur earum soluta non laborum ipsa necessitatibus.</p>
         </div>
       </section>
-      <section className='backstage'>
-        <div className="container gallery-grid">
-          <div className="gallery-item img1"></div>
-          <div className="gallery-item img2"></div>
-          <div className="gallery-item img3"></div>
-          <div className="gallery-item img4"></div>
-        </div>
-      </section>
+
+      {/* Componente Backstage con 5 fotos */}
+      <Backstage photos={photos} photoCount={4} />
 
       <footer>
         <Footer sections={sections} />
@@ -39,4 +60,4 @@ function App() {
   );
 }
 
-export default App;  
+export default App;

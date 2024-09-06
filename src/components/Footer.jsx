@@ -13,12 +13,12 @@ function Footer({ sections }) {
       <Container>
         <Row className="justify-content-center text-center">
           {/* Título SUAVE */}
-          <Col xs={12} className="mb-3">
-            <h2 className="footer-title">Suave</h2>
+          <Col xs={12} className="mb-3 mb-lg-4">
+            <h2 className="footer-title fs-1">Suave</h2>
           </Col>
 
           {/* Secciones */}
-          <Col xs={12} className="mb-3">
+          <Col xs={12} className="mb-3 mb-lg-4">
             <Nav className="justify-content-center">
               {sections.map((section, index) => (
                 <Nav.Link key={index} href={section.link} className="footer-link">
@@ -29,13 +29,13 @@ function Footer({ sections }) {
           </Col>
 
           {/* Iconos */}
-          <Col xs={12} className="mb-3">
+          <Col xs={12} className="mb-3 mb-lg-4">
             <Nav className="justify-content-center">
-              <Nav.Link href="#email" className="social-icon"><FaEnvelope /></Nav.Link>
-              <Nav.Link href="#youtube" className="social-icon"><FaYoutube /></Nav.Link>
-              <Nav.Link href="#instagram" className="social-icon"><FaInstagram /></Nav.Link>
-              <Nav.Link href="#tiktok" className="social-icon"><FaTiktok /></Nav.Link>
-              <Nav.Link href="#whatsapp" className="social-icon"><FaWhatsapp /></Nav.Link>
+              <Nav.Link href="#email" className="social-icon"><FaEnvelope size={25}/></Nav.Link>
+              <Nav.Link href="#youtube" className="social-icon"><FaYoutube size={25}/></Nav.Link>
+              <Nav.Link href="#instagram" className="social-icon"><FaInstagram size={25}/></Nav.Link>
+              <Nav.Link href="#tiktok" className="social-icon"><FaTiktok  size={25}/></Nav.Link>
+              <Nav.Link href="#whatsapp" className="social-icon"><FaWhatsapp size={25} /></Nav.Link>
             </Nav>
           </Col>
 
