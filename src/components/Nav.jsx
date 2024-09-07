@@ -10,12 +10,12 @@ function Navegator() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const mainSection = document.querySelector('main'); // Asegúrate de que haya una sección 'main'
+      const mainSection = document.querySelector('main'); 
       const mainOffset = mainSection.offsetTop; // La distancia de la sección main desde la parte superior
       const scrollPos = window.scrollY;
-      const triggerOffset = mainOffset + (window.innerHeight ); // Ajuste para cuando "casi" no se vea
+      const triggerOffset = mainOffset + (window.innerHeight ); // Donde se esconde el nav
 
-      // Si el scroll es mayor que el valor ajustado, deja de estar fixed
+      
       if (scrollPos >= triggerOffset) {
         setIsFixed(false);
       } else {

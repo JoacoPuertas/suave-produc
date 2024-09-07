@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 import './Backstage.css';
 
 // Importamos las imágenes
@@ -10,49 +11,33 @@ import Suave4 from '../assets/Fotos/Suave4.jpg';
 import Suave5 from '../assets/Fotos/Suave5.jpg';
 import Suave6 from '../assets/Fotos/Suave6.jpg';
 import Suave7 from '../assets/Fotos/Suave7.jpg';
-import Suave8 from '../assets/Fotos/Suave8.jpg';
 
-function Backstage({ photos }) {
-  const [photoCount, setPhotoCount] = useState(4);
-
-  useEffect(() => {
-    // Función que ajusta el número de fotos según el ancho de la pantalla
-    const updatePhotoCount = () => {
-      const screenWidth = window.innerWidth;
-      if (screenWidth <= 768) {
-        setPhotoCount(4); // Muestra 4 fotos en mobile
-      } else if (screenWidth <= 1024) {
-        setPhotoCount(6); // Muestra 6 fotos en tablet
-      } else {
-        setPhotoCount(9); // Muestra 9 fotos en desktop
-      }
-    };
-
-    // Llamamos a la función al cargar la página y al redimensionar
-    updatePhotoCount();
-    window.addEventListener('resize', updatePhotoCount);
-
-    // Limpieza del event listener cuando el componente se desmonta
-    return () => window.removeEventListener('resize', updatePhotoCount);
-  }, []);
-
-  const selectedPhotos = photos.slice(0, photoCount);
-
+function Backstage() {
   return (
-    <section className='backstage p-3'>
+    <Container fluid className="backstage p-3">
       <h2 className='text-center mb-4'>Backstage</h2>
-      <div className="container gallery-grid">
-        {selectedPhotos.map((photo, index) => (
-          <div key={index} className={`gallery-item gallery-item-${index}`} style={{ backgroundImage: `url(${photo})` }}>
-          </div>
-        ))}
-      </div>
-    </section>
+      <Row> 
+        {/* Imagen principal que ocupa dos filas */}
+        <Col xs={12} md={4} className="gallery-item gallery-item-large" style={{ backgroundImage: `url(${Suave0})` }}></Col>
+
+        {/* Columna que contiene las dos imágenes a la derecha de la principal */}
+        <Col xs={12} md={4}>
+          <Row>
+            <Col xs={6} className="gallery-item gallery-item-half" style={{ backgroundImage: `url(${Suave1})` }}></Col>
+            <Col xs={6} className="gallery-item gallery-item-half" style={{ backgroundImage: `url(${Suave2})` }}></Col>
+          </Row>
+        </Col>
+        <Col xs={12} md={4} className="gallery-item gallery-item-large" style={{ backgroundImage: `url(${Suave3})` }}></Col>
+      </Row>
+      {/* Poner solo cuando estan en desktop => */}
+      {/* <Row>
+        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave4})` }}></Col>
+        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave5})` }}></Col>
+        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave6})` }}></Col>
+        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave7})` }}></Col>
+      </Row> */}
+    </Container>
   );
 }
-
-// Exportamos el array de fotos para que el componente principal lo utilice
-const photos = [Suave0, Suave1, Suave2, Suave3, Suave4, Suave5, Suave6, Suave7, Suave8];
-export { photos };
 
 export default Backstage;
