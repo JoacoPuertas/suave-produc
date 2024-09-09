@@ -2,7 +2,13 @@
     background-color: #212321;
     color: #fefffa;
   }
-
+h2 {
+  font-family: 'Poppins', sans-serif; /* O usa una fuente minimalista como 'Roboto', 'Lato' */
+  font-weight: 500; /* Resalta el título sin ser muy grueso */
+  letter-spacing: 1px; /* Añade un poco de espacio entre letras */
+  color: #fefffa; /* Un gris oscuro es más suave que el negro puro */
+  text-transform: uppercase;
+}
   .gallery-item {
     background-size: cover;
     background-position: center;

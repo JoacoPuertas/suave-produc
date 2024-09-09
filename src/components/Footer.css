@@ -11,7 +11,8 @@
 
 .footer-link {
   color: #fefffa;
-  margin: 0 5px;
+  margin: 0;
+  padding: 0 10px;
 }
 
 .footer-link:hover {

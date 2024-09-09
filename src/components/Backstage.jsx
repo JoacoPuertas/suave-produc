@@ -15,7 +15,7 @@ import Suave7 from '../assets/Fotos/Suave7.jpg';
 function Backstage() {
   return (
     <Container fluid className="backstage p-3">
-      <h2 className='text-center mb-4'>Backstage</h2>
+      <h2 className='text-center mb-5'>Backstage</h2>
       <Row> 
         {/* Imagen principal que ocupa dos filas */}
         <Col xs={12} md={4} className="gallery-item gallery-item-large" style={{ backgroundImage: `url(${Suave0})` }}></Col>

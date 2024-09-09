@@ -7,11 +7,23 @@
   padding: 0;
   box-sizing: border-box;
 }
+.App {
+  background-color: #212321;
+}
+
+h2 {
+  font-family: 'Poppins', sans-serif; /* O usa una fuente minimalista como 'Roboto', 'Lato' */
+  font-weight: 500; /* Resalta el título sin ser muy grueso */
+  letter-spacing: 1px; /* Añade un poco de espacio entre letras */
+  color: #fefffa; /* Un gris oscuro es más suave que el negro puro */
+  text-transform: uppercase;
+}
+
 /* Main Section Styles */
 .main-section {
   position: relative;
   height: 100vh;
-  background-image: url('./assets/julis.jpg');
+  background-image:linear-gradient(to bottom, rgba(33, 35, 33, 0) 80%, rgba(33, 35, 33, 1) 100%) ,url('./assets/julis.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -20,13 +32,24 @@
 .session {
   background-color: #212321;
   color: #fefffa;
-  padding: 3rem;
 }
 
 .session h2 {
   text-align: center;
 }
 
+.ratio {
+  height: 40vh;
+  max-width: '100%';
+}
+
 .backstage {
   background-color: #212321;
+}
+
+@media (min-width: 991px){
+  .ratio {
+    height: 80vh;
+    max-width: 70%;
+  }
 }

@@ -20,10 +20,10 @@ function App() {
         <Navegator />
       </main>
       
-      <section className='session px-5 py-3'>
-        <h2 className='text-center my-5 mb-lg-4'>Sessions</h2>
+      <section className='session px-2 py-3'>
+        <h2 className='text-center mb-5 mt-3'>Sessions</h2>
         <div className="container text-center">
-          <div className="ratio mx-auto" style={{ height: '40vh', maxWidth: '100%' }}>
+          <div className="ratio mx-auto">
             <lite-youtube videoid="Rzf5Cd-XRzU"></lite-youtube>
           </div>
           <p className='fs-6 mt-4'>
