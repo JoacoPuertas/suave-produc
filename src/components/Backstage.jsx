@@ -16,26 +16,29 @@ function Backstage() {
   return (
     <Container fluid className="backstage p-3">
       <h2 className='text-center mb-5'>Backstage</h2>
+      
+      {/* Primer fila en mobile */}
       <Row> 
-        {/* Imagen principal que ocupa dos filas */}
         <Col xs={12} md={4} className="gallery-item gallery-item-large" style={{ backgroundImage: `url(${Suave0})` }}></Col>
 
-        {/* Columna que contiene las dos imágenes a la derecha de la principal */}
+        {/* Columna que contiene las dos imágenes pequeñas */}
         <Col xs={12} md={4}>
-          <Row>
+          <Row className='midrow container-fluid'>
             <Col xs={6} className="gallery-item gallery-item-half" style={{ backgroundImage: `url(${Suave1})` }}></Col>
             <Col xs={6} className="gallery-item gallery-item-half" style={{ backgroundImage: `url(${Suave2})` }}></Col>
           </Row>
         </Col>
+
         <Col xs={12} md={4} className="gallery-item gallery-item-large" style={{ backgroundImage: `url(${Suave3})` }}></Col>
       </Row>
-      {/* Poner solo cuando estan en desktop => */}
-      {/* <Row>
-        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave4})` }}></Col>
-        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave5})` }}></Col>
-        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave6})` }}></Col>
-        <Col xs={6} md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave7})` }}></Col>
-      </Row> */}
+
+      {/* Segunda fila solo para pantallas grandes */}
+      <Row className="g-2 mt-3 d-none d-md-flex">
+        <Col md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave4})` }}></Col>
+        <Col md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave5})` }}></Col>
+        <Col md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave6})` }}></Col>
+        <Col md={3} className="gallery-item" style={{ backgroundImage: `url(${Suave7})` }}></Col>
+      </Row>
     </Container>
   );
 }

@@ -1,40 +1,64 @@
+* {
+  padding: 0;
+}
+
 .backstage {
-    background-color: #212321;
-    color: #fefffa;
-  }
+  background-color: #212321;
+  color: #fefffa;
+}
+
 h2 {
-  font-family: 'Poppins', sans-serif; /* O usa una fuente minimalista como 'Roboto', 'Lato' */
-  font-weight: 500; /* Resalta el título sin ser muy grueso */
-  letter-spacing: 1px; /* Añade un poco de espacio entre letras */
-  color: #fefffa; /* Un gris oscuro es más suave que el negro puro */
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: #fefffa;
   text-transform: uppercase;
 }
-  .gallery-item {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 150px;
-  }
-  
-  .gallery-item-large {
-    height: 250px; /* Ocupar dos filas */
-  }
-  
-  .gallery-item-half {
-    height: 200px; /* La mitad de la imagen grande */
-  }
-  
-  @media (min-width: 1025px) {
-    .gallery-item {
-        height: 200px;
-    }
 
-    .gallery-item-large {
-      height: 400px; /* Ajuste para desktop */
-    }
-  
-    .gallery-item-half {
-      height: 200px; /* Ajuste para que las dos imágenes juntas ocupen el mismo alto que la imagen grande */
-    }
+div.col-md-4.col-12  {
+  padding: 0;
+}
+
+.row {
+  gap: 10px;
+  padding: 0;
+}
+
+.midrow {
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly; /* Distribuye el espacio entre las imágenes */
+  flex-wrap: nowrap; /* Evita que las imágenes se muevan a otra fila */
+  width: 100%; /* El ancho del contenedor es responsivo */
+}
+
+.gallery-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 150px;
+}
+
+.gallery-item-large {
+  height: 250px; /* Ocupar dos filas */
+}
+
+.gallery-item-half {
+  flex-grow: 1; /* Hace que las imágenes se expandan uniformemente */
+  flex-basis: 0; /* Distribuye equitativamente el espacio disponible */
+  height: 200px; /* La mitad de la imagen grande */
+}
+
+@media (min-width: 1025px) {
+  .gallery-item {
+    height: 200px;
   }
-  
+
+  .gallery-item-large {
+    height: 400px; /* Ajuste para desktop */
+  }
+
+  .gallery-item-half {
+    height: 200px; /* Ajuste para que las dos imágenes juntas ocupen el mismo alto que la imagen grande */
+  }
+}
