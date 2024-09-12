@@ -1,5 +1,6 @@
 * {
   padding: 0;
+  margin: 0;
 }
 
 .backstage {
@@ -20,7 +21,8 @@ div.col-md-4.col-12  {
 }
 
 .row {
-  gap: 10px;
+  margin: 0;
+  gap: 10px; /* Espaciado entre columnas */
   padding: 0;
 }
 
@@ -32,33 +34,55 @@ div.col-md-4.col-12  {
   width: 100%; /* El ancho del contenedor es responsivo */
 }
 
+.gallery-item-half {
+  width: calc(50% - 5px); /* Ajusta el ancho para dar el espacio de 10px entre las imágenes del medio */
+  height: 195px; /* Establece una altura fija para las imágenes del medio */
+  background-size: cover;
+  background-position: center;
+}
+
 .gallery-item {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 150px;
-}
-
-.gallery-item-large {
-  height: 250px; /* Ocupar dos filas */
-}
-
-.gallery-item-half {
   flex-grow: 1; /* Hace que las imágenes se expandan uniformemente */
   flex-basis: 0; /* Distribuye equitativamente el espacio disponible */
   height: 200px; /* La mitad de la imagen grande */
 }
 
-@media (min-width: 1025px) {
+.gallery-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery-item-large {
+  height: 400px; /* Alto fijo para las imágenes grandes */
+}
+
+@media (min-width: 768px) {
   .gallery-item {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 200px;
   }
 
   .gallery-item-large {
-    height: 400px; /* Ajuste para desktop */
+    height: 400px;
   }
 
   .gallery-item-half {
-    height: 200px; /* Ajuste para que las dos imágenes juntas ocupen el mismo alto que la imagen grande */
+    height: 195px; /* Aseguramos una altura específica para las imágenes del medio */
+    margin-bottom: 10px; /* Espacio entre filas */
+  }
+  .backstage .row{
+    flex-wrap: nowrap;
+  }
+  .midrow {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 }
