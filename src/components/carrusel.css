@@ -1,0 +1,45 @@
+.custom-next-icon, .custom-prev-icon {
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px; /* Tamaño de las flechas */
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .custom-next-icon {
+    background-image: url('../assets/icons/izq.png');
+  }
+  
+  .custom-prev-icon {
+    background-image: url('../assets/icons/der.png');
+  }
+  
+  /* Asegura que el carrusel ocupe todo el tamaño de su contenedor */
+  .carousel-container {
+    width: 100%;
+    height: auto;
+  }
+  
+  .carousel-item img {
+    width: 100%;  /* La imagen ocupa todo el ancho del contenedor */
+    height: 400px;
+    object-fit: cover; /* Asegura que la imagen se recorte o escale correctamente */
+  }
+  
+  /* Responsividad para pantallas grandes (mayor a 991px) */
+  @media (min-width: 991px) {
+    .carousel-container {
+      width: 70vw; /* 70% del viewport width */
+      margin: 0 auto; /* Centra el carrusel */
+    }
+
+    .carousel-item img {
+        width: 100%;  /* La imagen ocupa todo el ancho del contenedor */
+        height: 100%;
+        max-height: 550px;
+        object-fit: cover; /* Asegura que la imagen se recorte o escale correctamente */
+      }
+
+  }
+  

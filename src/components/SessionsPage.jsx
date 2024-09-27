@@ -1,10 +1,13 @@
 import React from 'react';
+import './SessionsPage.css';
+import IndividualIntervalsExample from './carrusel';
 
 function Sessions() {
   return (
-    <div>
-      <h1>About Us</h1>
-      <p>This is the About Us page.</p>
+    <div className="sessions-container py-lg-4">
+      <div className="carousel-container">
+        <IndividualIntervalsExample />
+      </div>
     </div>
   );
 }

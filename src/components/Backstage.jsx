@@ -17,7 +17,7 @@ import Suave9 from '../assets/Fotos/Suave9.jpg';
 function Backstage() {
   return (
     <Container fluid className="backstage p-3">
-      <h2 className='text-center mb-5'>Backstage</h2>
+      <h2 className='text-center mb-5'><b>Backstage</b></h2>
       
       {/* Primer fila en mobile */}
       <Row className='d-flex'> 

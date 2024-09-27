@@ -7,7 +7,7 @@ import { FaEnvelope, FaYoutube, FaInstagram, FaTiktok, FaWhatsapp } from 'react-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Footer.css';
 
-function Footer({ sections }) {
+function Footer({ sections = [] }) {  // Agregar valor por defecto para sections
   return (
     <footer className="footer py-4">
       <Container>
@@ -20,11 +20,15 @@ function Footer({ sections }) {
           {/* Secciones */}
           <Col xs={12} className="mb-3 mb-lg-4">
             <Nav className="justify-content-center">
-              {sections.map((section, index) => (
-                <Nav.Link key={index} href={section.link} className="footer-link">
-                  {section.name}
-                </Nav.Link>
-              ))}
+              {sections.length > 0 ? (
+                sections.map((section, index) => (
+                  <Nav.Link key={index} href={section.link} className="footer-link">
+                    {section.name}
+                  </Nav.Link>
+                ))
+              ) : (
+                <p>No sections available</p>
+              )}
             </Nav>
           </Col>
 
@@ -34,7 +38,7 @@ function Footer({ sections }) {
               <Nav.Link href="#email" className="social-icon"><FaEnvelope size={25}/></Nav.Link>
               <Nav.Link href="#youtube" className="social-icon"><FaYoutube size={25}/></Nav.Link>
               <Nav.Link href="#instagram" className="social-icon"><FaInstagram size={25}/></Nav.Link>
-              <Nav.Link href="#tiktok" className="social-icon"><FaTiktok  size={25}/></Nav.Link>
+              <Nav.Link href="#tiktok" className="social-icon"><FaTiktok size={25}/></Nav.Link>
               <Nav.Link href="#whatsapp" className="social-icon"><FaWhatsapp size={25} /></Nav.Link>
             </Nav>
           </Col>
