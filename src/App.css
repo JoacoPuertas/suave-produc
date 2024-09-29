@@ -23,15 +23,23 @@ h2 {
   color: #fefffa; /* Un gris oscuro es más suave que el negro puro */
 }
 
-/* Default background for other sections */
 .main-section {
-  background-color: #212321;
+    background-color: #FFD4D3;
+}
+
+/* Background image only for Home ("/") */
+.home-bg {
   position: relative;
   height: 100vh;
   background-image: linear-gradient(to bottom, rgba(33, 35, 33, 0) 80%, rgba(33, 35, 33, 1) 100%), url('./assets/julis.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* No background for other pages */
+.no-bg {
+    background-color: #FFD4D3;
 }
 
 /* Background for sessions page */

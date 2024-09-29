@@ -1,43 +1,21 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import './carrusel.css';
-import './sessionsPage.css';
 
-// Importa las imágenes
-import Suave0 from '../assets/Fotos/Suave0.jpg';
-import Suave1 from '../assets/Fotos/Suave1.jpg';
-import Suave2 from '../assets/Fotos/Suave2.jpg';
-
-function IndividualIntervalsExample() {
+function CustomCarousel({ images, interval }) {
   return (
-    <div className="sessions-container"> {/* Aplica el contenedor con el tamaño adecuado */}
-      <Carousel nextIcon={<span className="custom-next-icon" />} prevIcon={<span className="custom-prev-icon" />}>
-        <Carousel.Item interval={1000}>
+    <Carousel indicators={false} nextIcon={<span className="custom-next-icon" />} prevIcon={<span className="custom-prev-icon" />} interval={interval}>
+      {images.map((image, index) => (
+        <Carousel.Item key={index}>
           <img
-            className="d-block"
-            src={Suave0}
-            alt="First slide"
+            className="d-block custom-carousel-image"
+            src={image}
+            alt={`Slide ${index}`}
           />
         </Carousel.Item>
-
-        <Carousel.Item interval={500}>
-          <img
-            className="d-block"
-            src={Suave1}
-            alt="Second slide"
-          />
-        </Carousel.Item>
-
-        <Carousel.Item>
-          <img
-            className="d-block"
-            src={Suave2}
-            alt="Third slide"
-          />
-        </Carousel.Item>
-      </Carousel>
-    </div>
+      ))}
+    </Carousel>
   );
 }
 
-export default IndividualIntervalsExample;
+export default CustomCarousel;

@@ -16,8 +16,10 @@ function MainContent() {
   const location = useLocation(); // Hook para detectar la ruta actual
 
   // Asigna una clase dinámica al contenedor principal según la ruta actual
-  const mainSectionClass = location.pathname === '/sessions' ? 'main-section sessions-bg' : 'main-section';
-
+  const mainSectionClass = 
+  location.pathname === '/sessions' ? 'main-section sessions-bg' :
+  location.pathname === '/' ? 'main-section home-bg' :
+  'main-section no-bg';
   const sections = [
     { name: 'Sessions', link: '/sessions' },
     { name: 'Backstage', link: '/backstage' },

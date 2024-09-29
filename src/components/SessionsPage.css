@@ -5,8 +5,20 @@ body {
     .sessions-container {
     max-width: 100vw; /* Asegura que ocupe todo el ancho en pantallas pequeñas */
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
-  
+
+  .sessions-container .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .sessions-container .col-12 {
+    width: 100%;
+  }
+
   .sessions-container img {
     object-fit: cover; /* Asegura que las imágenes se adapten correctamente */
     width: 100%; /* Asegura que todas las imágenes ocupen el 100% del carrusel */
@@ -18,6 +30,12 @@ body {
   @media (min-width: 991px) {
     .sessions-container {
       max-width: 70vw; /* 70% del ancho del viewport para pantallas grandes */
+    }
+    .sessions-container .col-lg-6 {
+      width: 60%;
+    }
+    .sessions-container .row {
+      flex-wrap: nowrap;
     }
   }
 
