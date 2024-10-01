@@ -1,0 +1,95 @@
+/* Fondo de imagen para About Us */
+body {
+  background-color: #212321;
+}
+
+.about-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #212321;
+  }
+  
+  /* Imagen de fondo con mayor altura */
+  .about-bg {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Ajusta el porcentaje según lo que quieras mostrar */
+    background-image: url('../assets/julis.jpg'); /* Cambia esto a la ruta correcta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Filtro de opacidad */
+  .about-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Opacidad del 70% con un fondo negro */
+    z-index: 1;
+  }
+  
+  /* Texto superpuesto sobre la imagen */
+  .overlay {
+    position: relative; /* Cambiado de absolute a relative para que no interfiera con el filtro */
+    z-index: 2; /* El texto está encima del filtro */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Esto alinea el contenido al final (abajo) */
+    align-items: center;
+  }
+  
+  .about-text {
+    color: #fefffa;
+    font-size: clamp(1rem, 0.7727rem + 0.9091vw, 1.5rem);
+    text-align: center;
+    padding: 20px;
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    z-index: 2;
+  }
+
+  /* Estilo para las Cards del equipo */
+  .team-card {
+    margin: 20px 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .team-card img {
+    height: 300px;
+    object-fit: cover;
+    background-color: transparent;
+    box-shadow: none;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    filter: grayscale(100%);
+  }
+  
+  .team-card .card-title {
+    color: #fefffa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-top: 10px;
+    border: 1px solid #888888;
+    width: 100%;
+  }
+  
+  .team-card .card-text {
+    font-size: 1rem;
+    color: #888888;
+    border: 1px solid #888888;
+    width: 100%;
+  }
+  
