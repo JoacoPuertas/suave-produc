@@ -3,6 +3,7 @@ import { Card, Container, Row, Col } from 'react-bootstrap';
 import './aboutUsPage.css';
 import img1 from '../assets/Juli.png';
 import img2 from '../assets/Juli2.jpg';
+import cloudIcon from '../assets/icons/Cloud.png';
 
 function AboutUs() {
   return (
@@ -22,19 +23,27 @@ function AboutUs() {
           <Col md={6} lg={4}>
             <Card className="team-card">
               <Card.Img variant="top" src={img1} />
-              <Card.Body className='py-1 px-0'>
-                <Card.Title className='py-1 px-3'>Julieta Puertas</Card.Title>
-                <Card.Text className='py-1 px-3'>Prouctora - Fotografa</Card.Text>
-              </Card.Body>
+              <div className='container-card'>
+                <Card.Body className='py-0 px-0'>
+                  <Card.Title className='py-1 px-1'><b>JULIETA PUERTAS</b></Card.Title>
+                  <Card.Text className='py-1 px-1'><b>PRODUCTORA - FOTOGRAFA</b></Card.Text>
+                </Card.Body>
+                <div className='icon-card'><img src={cloudIcon} alt="Cloud Icon"/></div>
+              </div>
+              
             </Card>
           </Col>
           <Col md={6} lg={4}>
-            <Card className="team-card">
+          <Card className="team-card">
               <Card.Img variant="top" src={img2} />
-              <Card.Body className='py-1 px-0'>
-                <Card.Title className='py-1 px-3'>Julieta Ventanas</Card.Title>
-                <Card.Text className='py-1 px-3'>Prouctora - Fotografa</Card.Text>
-              </Card.Body>
+              <div className='container-card'>
+                <Card.Body className='py-0 px-0'>
+                  <Card.Title className='py-1 px-1'><b>JULIETA VENTANAS</b></Card.Title>
+                  <Card.Text className='py-1 px-1'><b>PRODUCTORA - ASTRONAUTA</b></Card.Text>
+                </Card.Body>
+                <div className='icon-card'><img src={cloudIcon} alt="Cloud Icon"/></div>
+              </div>
+              
             </Card>
           </Col>
         </Row>

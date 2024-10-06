@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'; // Router y useLocation deben estar importados aquí
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navegator from './components/Nav';
 import Footer from './components/Footer';
 import Backstage from './components/Backstage'; 
@@ -11,21 +11,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import '@justinribeiro/lite-youtube';
 
-// Componente separado que usa useLocation
 function MainContent() {
   const location = useLocation(); // Hook para detectar la ruta actual
 
-  // Asigna una clase dinámica al contenedor principal según la ruta actual
   const mainSectionClass = 
-  location.pathname === '/sessions' ? 'main-section sessions-bg' :
-  location.pathname === '/' ? 'main-section home-bg' :
-  'main-section no-bg';
-  const sections = [
+    location.pathname === '/sessions' ? 'main-section sessions-bg' :
+    location.pathname === '/' ? 'main-section home-bg' :
+    'main-section no-bg';
+
+  // Definir todas las secciones disponibles
+  const allSections = [
+    { name: 'Home', link: '/' },
     { name: 'Sessions', link: '/sessions' },
     { name: 'Backstage', link: '/backstage' },
     { name: 'About Us', link: '/about' },
     { name: 'Contact', link: '/contact' },
   ];
+
+  // Filtrar las secciones excluyendo la ruta actual
+  const sections = allSections.filter(section => section.link !== location.pathname);
 
   return (
     <>
@@ -63,7 +67,7 @@ function MainContent() {
       </Routes>
 
       <footer>
-        <Footer sections={sections} />
+        <Footer sections={sections} /> 
       </footer>
     </>
   );
@@ -71,7 +75,7 @@ function MainContent() {
 
 function App() {
   return (
-    <Router> {/* Asegúrate de que Router envuelva todo el contenido */}
+    <Router>
       <MainContent />
     </Router>
   );

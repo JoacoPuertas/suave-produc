@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import { FaEnvelope, FaYoutube, FaInstagram, FaTiktok, FaWhatsapp } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Footer.css';
 
@@ -22,7 +23,7 @@ function Footer({ sections = [] }) {  // Agregar valor por defecto para sections
             <Nav className="justify-content-center">
               {sections.length > 0 ? (
                 sections.map((section, index) => (
-                  <Nav.Link key={index} href={section.link} className="footer-link">
+                  <Nav.Link key={index} as={Link} to={section.link} className="footer-link">
                     {section.name}
                   </Nav.Link>
                 ))
