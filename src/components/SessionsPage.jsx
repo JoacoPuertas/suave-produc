@@ -7,14 +7,19 @@ import Suave2 from '../assets/Fotos/Suave2.jpg';
 import Suave3 from '../assets/Fotos/Suave3.jpg';
 import Suave4 from '../assets/Fotos/Suave4.jpg';
 import Suave5 from '../assets/Fotos/Suave5.jpg';
+import sessionshd from '../assets/sessionshd.webm'; // Importa el video
 
 function Sessions() {
   const images1 = [Suave0, Suave1, Suave2];
   const images2 = [Suave3, Suave4, Suave5];
 
   return (
-    <div className="sessions-container p-4">
-      <div className="row">
+    <div className="sessions-container">
+
+      <div className="video-container">
+        <video src={sessionshd} autoPlay loop muted className="sessions-video" />
+      </div>
+      <div className="row mt-3">
         <div className="col-12 col-lg-6 mb-4 mb-lg-0">
           <CustomCarousel images={images1} interval={2500} />
         </div>
@@ -22,6 +27,9 @@ function Sessions() {
           <CustomCarousel images={images2} interval={3800} />
         </div>
       </div>
+
+      {/* Video en la sección de Sessions */}
+      
     </div>
   );
 }

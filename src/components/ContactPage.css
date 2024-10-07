@@ -3,7 +3,6 @@
     padding: 100px 0 50px 0;
     background-color: #221321; /* Fondo en modo dark */
     color: #fefffa; /* Texto claro */
-    background-image: url('../assets/Fotos/granulado.gif'); /* Ruta a tu imagen de textura */
     background-size: cover; /* Ajusta la imagen para que cubra toda la sección */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -50,8 +49,9 @@
   
   .contact-item {
     padding: 20px;
-    background-color:	rgba(33, 35, 33,0.7); /* Fondo oscuro para los ítems */
-    color: #fefffa;
+    background-color:	#FFD4D3; /* Fondo oscuro para los ítems */
+    opacity: 0.9;
+    color: #212321;
     border-radius: 8px;
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
@@ -59,7 +59,7 @@
   
   .contact-item:hover {
     transform: translateY(-10px);
-    background-color: #3b2837; /* Cambio de fondo en hover */
+    background-color: #e99b9a; /* Cambio de fondo en hover */
   }
   
   .contact-icon {

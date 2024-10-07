@@ -1,42 +1,63 @@
-body {
-    background-color: #FFD4D3;
+/* Contenedor general de la sección de las sesiones */
+.sessions-container {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
-    .sessions-container {
-    max-width: 100vw; /* Asegura que ocupe todo el ancho en pantallas pequeñas */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
+/* Carruseles */
+.sessions-container .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
+.sessions-container .col-12 {
+  width: 100%;
+}
+
+.sessions-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+}
+
+/* Contenedor del video */
+.video-container {
+  background-color: #000;
+  width: 100%; /* Ajustar al 100% del contenedor padre */
+  margin: 0 auto; /* Asegurar que no haya scroll horizontal */
+  padding: 0; /* Elimina el padding para evitar desplazamiento */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Evita desbordes */
+}
+
+/* Estilo del video */
+.sessions-video {
+  width: 100%;
+  height: auto; /* Mantener la proporción */
+}
+
+/* Media queries para pantallas grandes */
+@media (min-width: 991px) {
+  .sessions-container {
+    max-width: 100%;
+  }
+  
+  .sessions-container .col-lg-6 {
+    width: 40%;
+  }
+  
   .sessions-container .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
   }
 
-  .sessions-container .col-12 {
-    width: 100%;
+  /* El video se ajustará a 60vh en pantallas grandes */
+  .sessions-video {
+    height: 60vh;
+    width: 70%;
   }
-
-  .sessions-container img {
-    object-fit: cover; /* Asegura que las imágenes se adapten correctamente */
-    width: 100%; /* Asegura que todas las imágenes ocupen el 100% del carrusel */
-    height: 300px; /* Ajusta la altura según tu preferencia */
-  }
-  
-
-
-  @media (min-width: 991px) {
-    .sessions-container {
-      max-width: 70vw; /* 70% del ancho del viewport para pantallas grandes */
-    }
-    .sessions-container .col-lg-6 {
-      width: 60%;
-    }
-    .sessions-container .row {
-      flex-wrap: nowrap;
-    }
-  }
-
-  
+}
